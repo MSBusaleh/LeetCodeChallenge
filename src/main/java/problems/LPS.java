@@ -20,7 +20,7 @@ Complexity:
     Space complexity = O(n^2) (2D array of size n*n)
  */
 
-public class problem1LongestPalindromicSubstring {
+public class LPS {
     public String findLongestPal(String s) {
         String solution = "";
         int[][] solArr = new int[s.length()][s.length()];
