@@ -23,7 +23,7 @@ Complexity:
 public class LPS {
     public String findLongestPal(String s) {
         String solution = "";
-        int[][] solArr = new int[s.length()][s.length()];
+       int[][] solArr = new int[s.length()][s.length()];
 
         for (int i = 0; i < s.length(); i++) { //O(n)
             for (int j = 0; j < s.length(); j++) { //O(n)

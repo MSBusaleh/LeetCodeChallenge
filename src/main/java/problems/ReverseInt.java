@@ -1,0 +1,51 @@
+package problems;
+/*
+Problem Statement:
+    Given a signed 32-bit integer x, return x with its digits reversed.
+    If reversing x causes the value to go outside the signed 32-bit integer
+    range [-231, 231 - 1], then return 0.
+
+    ### Medium level problem ###
+
+Constraints:
+    - Assume the environment does not allow you to store
+    64-bit integers (signed or unsigned).
+*/
+
+import com.sun.jdi.IntegerValue;
+
+public class ReverseInt {
+    public static void main(String[] args) {
+        System.out.println(reverse(0));
+        System.out.println(reverse(315));
+        System.out.println(reverse(-1000000003));
+    }
+
+    public static int reverse(int n){
+        try {
+            int sol = 0;
+            int digit = 0;
+
+            while(n!=0){
+                digit = n%10;
+
+                if(
+                       sol > Integer.MAX_VALUE/10 ||
+                       sol == Integer.MAX_VALUE/10 && digit > 7 ||
+                       sol < Integer.MIN_VALUE/10 ||
+                       sol == Integer.MIN_VALUE/10 && digit > 8
+                ){
+                    throw new ArithmeticException("Overflow or Underflow detected");
+                }
+
+                sol = sol*10 + digit;
+                n = n/10;
+            }
+
+            return sol;
+
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+}
