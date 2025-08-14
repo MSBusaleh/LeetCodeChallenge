@@ -15,13 +15,7 @@ Constraints:
 import com.sun.jdi.IntegerValue;
 
 public class ReverseInt {
-    public static void main(String[] args) {
-        System.out.println(reverse(0));
-        System.out.println(reverse(315));
-        System.out.println(reverse(-1000000003));
-    }
-
-    public static int reverse(int n){
+    public int reverse(int n){
         try {
             int sol = 0;
             int digit = 0;
@@ -31,9 +25,7 @@ public class ReverseInt {
 
                 if(
                        sol > Integer.MAX_VALUE/10 ||
-                       sol == Integer.MAX_VALUE/10 && digit > 7 ||
-                       sol < Integer.MIN_VALUE/10 ||
-                       sol == Integer.MIN_VALUE/10 && digit > 8
+                       sol < Integer.MIN_VALUE/10
                 ){
                     throw new ArithmeticException("Overflow or Underflow detected");
                 }
