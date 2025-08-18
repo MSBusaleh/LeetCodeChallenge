@@ -1,9 +1,9 @@
 package problems;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 class ReverseIntTest {
 
     @Test
@@ -30,7 +30,7 @@ class ReverseIntTest {
     @Test
     void ReverseInt_limitTest(){
         ReverseInt reverseInt = new ReverseInt();
-        int result = reverseInt.reverse(1000000003);
+        int result = reverseInt.reverse(1463847412);
         Assertions.assertEquals(0, result);
     }
 }

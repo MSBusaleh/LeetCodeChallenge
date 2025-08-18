@@ -10,9 +10,15 @@ Problem Statement:
 Constraints:
     - Assume the environment does not allow you to store
     64-bit integers (signed or unsigned).
-*/
 
-import com.sun.jdi.IntegerValue;
+Approach:
+    Simple while loop and arithmetic operations, with
+    a check for maximum value.
+
+Complexity:
+    Time = O(n)
+    Space = O(1)
+*/
 
 public class ReverseInt {
     public int reverse(int n){
@@ -27,7 +33,8 @@ public class ReverseInt {
                        sol > Integer.MAX_VALUE/10 ||
                        sol < Integer.MIN_VALUE/10
                 ){
-                    throw new ArithmeticException("Overflow or Underflow detected");
+                    throw new ArithmeticException(
+                            "Overflow or Underflow detected");
                 }
 
                 sol = sol*10 + digit;
